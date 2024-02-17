@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/myTextLinear"
+        android:layout_width="160dp"
+        android:layout_height="82dp"
+        android:text="Текст в LinearLayout" />
+
+    <Button
+        android:id="@+id/myButtonLinear"
+        android:layout_width="222dp"
+        android:layout_height="wrap_content"
+        android:text="Кнопка в LinearLayout" />
+
+    <EditText
+        android:id="@+id/myEditText"
+        android:layout_width="165dp"
+        android:layout_height="83dp"
+        android:hint="Введите текст"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/dog" />
+
+</LinearLayout>
+
