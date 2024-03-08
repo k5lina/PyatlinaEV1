@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="410dp"
+    android:layout_height="731dp"
+    android:background="@color/purple"
+    tools:context=".MainFragment">
+
+    <TextView
+        android:id="@+id/myTextConstraint"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="@dimen/text_indentation"
+        android:layout_marginTop="12dp"
+        android:text="@string/constraintText1"
+        android:textColor="@color/dark_purple"
+        android:textSize="@dimen/text_size_large"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/myTextConstraint2"
+        android:layout_width="250dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="92dp"
+        android:layout_marginTop="290dp"
+        android:text="@string/constraintText"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size_large"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+    <Button
+        android:id="@+id/myButton3"
+        android:layout_width="115dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="280dp"
+        android:backgroundTint="@color/dark_purple"
+        android:text="@string/constraintButton3"
+        android:textColor="@color/yellow"
+        android:textSize="11sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="167dp"
+        android:layout_height="144dp"
+        android:layout_marginStart="@dimen/text_indentation"
+        android:layout_marginTop="50dp"
+        android:src="@drawable/dog3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="174dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="200dp"
+        android:layout_marginTop="50dp"
+        android:src="@drawable/dogs"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="160dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="124dp"
+        android:layout_marginTop="180dp"
+        android:src="@drawable/dog5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragment_container_view2"
+        android:layout_width="411dp"
+        android:layout_height="731dp"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:name="com.example.pyatlinaev.SecondFragment"
+        tools:layout="@layout/fragment_second"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

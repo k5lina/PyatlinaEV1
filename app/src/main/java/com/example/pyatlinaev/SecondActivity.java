@@ -8,7 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
-public class SecondActivity extends AppCompatActivity {
+/*public class SecondActivity extends AppCompatActivity {
     private static final String TAG =  "PyatlinaEV";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,4 +34,4 @@ public class SecondActivity extends AppCompatActivity {
         myButton.setOnClickListener(listener);
 
     }
-}
+}*/

@@ -1,3 +1,21 @@
 <resources>
     <string name="app_name">PyatlinaEV</string>
+    <string name="linearlayoutText">Текст в LinearLayout</string>
+    <string name="linearlayoutButton">Кнопка в LinearLayout</string>
+    <string name="linearlayoutEditText">Введите текст</string>
+    <string name="constraintText">Это твой новый друг!</string>
+    <string name="constraintButton">Забрать домой!</string>
+    <string name="constraintButton2">Посмотреть еще</string>
+    <string name="constraintButton3">Поддержать</string>
+    <string name="constraintlayoutEditText">Дайте ему имя</string>
+    <string name="relativelayoutText">Текст в RealtiveLayout</string>
+    <string name="relativelayoutButton">Кнопка в RelativeLayout</string>
+    <string name="relativelayoutEditText">Введите текст</string>
+    <string name="linearlayoutText1">Добро пожаловатьt</string>
+    <string name="constraintText1">Добро пожаловать в наш приют!</string>
+    <string name="relativelayoutText1">Добро пожаловать</string>
+    <string name="button4">Вернуться</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
 </resources>
