@@ -1,35 +1,28 @@
 package com.example.pyatlinaev;
 
-import android.content.Context;
-import android.media.RouteListingPreference;
 import android.os.Bundle;
 
-import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
-import android.widget.EditText;
-import android.widget.AdapterView;
-import com.example.app4.MyListAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
 
-
-public class SecondFragment extends Fragment {
-
+public class ThirdFragment extends Fragment {
     private static final String TAG = "PyatlinaEV";
-
-    public SecondFragment() {
-        super(R.layout.fragment_second);
+    public ThirdFragment() {
+        super(R.layout.fragment_third);
     }
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -37,37 +30,26 @@ public class SecondFragment extends Fragment {
 
     }
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        /*Button myButton = view.findViewById(R.id.myButtonLinear);
-        EditText edText = view.findViewById(R.id.myEditText);
-        myButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String text = "Это твой новый друг " + edText.getText().toString();
-                Bundle result = new Bundle();
-                result.putString("bkey", text);
-                getParentFragmentManager().setFragmentResult("rkey", result);
-            }
-        });*/
-        View view = inflater.inflate(R.layout.fragment_second, container, false);
-        ListView itemsList = view.findViewById(R.id.ListView);
-        MyListAdapter adapter = new MyListAdapter(requireContext(), R.layout.list_item, generateItemList());
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
+        View view = inflater.inflate(R.layout.fragment_third, container, false);
+        RecyclerView itemsList = view.findViewById(R.id.recycleView);
+        MyRecycleAdapter adapter = new MyRecycleAdapter(getContext(), generateItemListRecycle());
+        LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
+        itemsList.setLayoutManager(layoutManager);
         itemsList.setAdapter(adapter);
 
-        itemsList.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+        adapter.setOnItemClickListener(new MyRecycleAdapter.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View v, int position, long id)
-            {
+            public void onItemClick(Item item) {
                 Toast.makeText(getContext(), "Элемент выбран",Toast.LENGTH_SHORT).show();
                 Log.d(TAG, "Элемент выбран");
             }
         });
+
         return view;
     }
 
-    private List<Item> generateItemList(){
+    private List<Item> generateItemListRecycle() {
         List<Item> items = new ArrayList<>();
 
         items.add(new Item("Аза"));

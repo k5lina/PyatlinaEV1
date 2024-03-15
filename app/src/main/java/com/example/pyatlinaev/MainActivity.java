@@ -34,10 +34,6 @@ public class MainActivity extends AppCompatActivity {
                     .setReorderingAllowed(true)
                     .add(R.id.fragment_container_view, MainFragment.class, bundle)
                     .commit();
-            getSupportFragmentManager().beginTransaction()
-                    .setReorderingAllowed(true)
-                    .add(R.id.fragment_container_view2, SecondFragment.class, bundle)
-                    .commit();
         }
 
         // TextView myTextView = findViewById(R.id.myTextConstraint);

@@ -4,12 +4,15 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentResultListener;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -42,6 +45,31 @@ public class MainFragment extends Fragment {
         Toast.makeText(requireContext(), "onCreateView", Toast.LENGTH_SHORT).show();
         Log.i(TAG, "onCreateView");
         View view = inflater.inflate(R.layout.fragment_main, container, false);
+        Button myButton = view.findViewById(R.id.myButtonLinear);
+        myButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FragmentManager fragmentManager = getParentFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.setReorderingAllowed(true);
+                fragmentTransaction.replace(R.id.fragment_container_view, SecondFragment.class, null);
+                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.commit();
+            }
+        });
+
+        Button myButton2 = view.findViewById(R.id.myButton2);
+        myButton2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FragmentManager fragmentManager = getParentFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.setReorderingAllowed(true);
+                fragmentTransaction.replace(R.id.fragment_container_view, ThirdFragment.class, null);
+                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.commit();
+            }
+        });
         return view;
     }
 
@@ -50,14 +78,14 @@ public class MainFragment extends Fragment {
         Toast.makeText(requireContext(), "onViewCreated", Toast.LENGTH_SHORT).show();
         Log.i(TAG, "onViewCreated");
 
-        TextView text = getView().findViewById(R.id.myTextConstraint2);
+        /*TextView text = getView().findViewById(R.id.myTextConstraint2);
         getChildFragmentManager().setFragmentResultListener("rkey", this, new FragmentResultListener() {
             @Override
             public void onFragmentResult(@NonNull String requestKey, @NonNull Bundle bundle) {
                 String result = bundle.getString("bkey");
                 text.setText(result);
             }
-        });
+        });*/
     }
 
     public void onViewStateRestored(View view, Bundle savedInstanceState) {
